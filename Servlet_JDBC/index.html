@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <h1>Insert student details</h1>
+            <form action="insertServlet" method ="post" >
+                <!-- comment -->
+                Student_id : <input type="number" name="sid">
+                Student_name : <input type="text" name="sname">
+                <input type="submit" name ="submit">                
+            </form>
+        </div>
+        <div>
+            <h1>Update student details</h1>
+            <form action="updateServlet" method ="post" >
+                <!-- comment -->
+                Student_uid : <input type="number" name="usid">
+                Student_uname : <input type="text" name="usname">
+                <input type="submit" name ="submit">                
+            </form>
+        </div>
+        
+        <div>
+            <h1>Delete student details</h1>
+            <form action="deleteServlet" method ="post" >
+                <!-- comment -->
+                Student_did : <input type="number" name="dsid">
+                <input type="submit" name ="submit">                
+            </form>
+        </div>
+        <div>
+            <h1>Show student table details</h1>
+            <form action="showServlet" method ="post" >
+                <!-- comment -->
+                <input type="submit" name ="submit">                
+            </form>
+        </div>
+    </body>
+</html>
