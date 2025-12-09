@@ -19,15 +19,23 @@ public class insertServlet extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             int sid = Integer.parseInt(request.getParameter("sid"));
             String sname = request.getParameter("sname");
+            String gender = request.getParameter("gender");
+            String qualification = request.getParameter("qualification");
+            
+            String[] hobbiesArray = request.getParameterValues("hobbies");
+            String hobbies = (hobbiesArray != null) ? String.join(",", hobbiesArray) : "";
 
             try {
                 Class.forName("oracle.jdbc.driver.OracleDriver");
                 Connection con = DriverManager.getConnection(
                         "jdbc:oracle:thin:@localhost:1521:xe", "kk", "kk");
 
-                PreparedStatement ps = con.prepareStatement("INSERT INTO student VALUES (?, ?)");
+                PreparedStatement ps = con.prepareStatement("INSERT INTO student VALUES (?, ?, ?, ?, ?)");
                 ps.setInt(1, sid);
                 ps.setString(2, sname);
+                ps.setString(3, gender);
+                ps.setString(4, qualification);
+                ps.setString(5, hobbies);
 
                 int rows = ps.executeUpdate();
                 out.println("<h2>" + rows + " record inserted successfully!</h2>");

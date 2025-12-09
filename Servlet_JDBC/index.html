@@ -13,15 +13,31 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
         <div>
             <h1>Insert student details</h1>
             <form action="insertServlet" method ="post" >
-                Student_id : <input type="number" name="sid">
-                Student_name : <input type="text" name="sname">
+                Student_id : <input type="number" name="sid"><br>
+                Student_name : <input type="text" name="sname"><br>
+                Gender : 
+                <input type="radio" name="gender" value="Male"> Male
+                <input type="radio" name="gender" value="Female"> Female
+                <input type="radio" name="gender" value="Other"> Other<br>
+                Qualification : 
+                <select name="qualification">
+                    <option value="">-- Select Qualification --</option>
+                    <option value="BCA">BCA</option>
+                    <option value="MCA">MCA</option>
+                    <option value="MSCIT">MSCIT</option>
+                </select><br>
+                Hobbies :
+                <input type="checkbox" name="hobbies" value="Reading"> Reading
+                <input type="checkbox" name="hobbies" value="Sports"> Sports
+                <input type="checkbox" name="hobbies" value="Music"> Music
+                <input type="checkbox" name="hobbies" value="Coding"> Coding<br>
                 <input type="submit" name ="submit">                
             </form>
         </div>
         <div>
             <h1>Update student details</h1>
             <form action="updateServlet" method ="post" >
-                Student_uid : <input type="number" name="usid">
+                Student_uid : <input type="number" name="usid"><br>
                 Student_uname : <input type="text" name="usname">
                 <input type="submit" name ="submit">                
             </form>
@@ -30,13 +46,13 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
         <div>
             <h1>Delete student details</h1>
             <form action="deleteServlet" method ="post" >
+                Student_did : <input type="number" name="dsid"><br>
                 <input type="submit" name ="submit">                
             </form>
         </div>
         <div>
             <h1>Show student table details</h1>
             <form action="showServlet" method ="post" >
-            
                 <input type="submit" name ="submit">                
             </form>
         </div>

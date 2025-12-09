@@ -31,7 +31,7 @@ public class showServlet extends HttpServlet {
                     out.println("<tr><td>" + rs.getInt("sid") + "</td><td>" + rs.getString("sname") + "</td></tr>");
                 }
                 out.println("</table>");
-
+                out.println("<a href='index.html'>main page</a>");
                 con.close();
             } catch (Exception e) {
                 out.println("<h2 style='color:red;'>Error: " + e.getMessage() + "</h2>");
